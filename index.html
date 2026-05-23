@@ -4,44 +4,105 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ECONM-II Practice Exams</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg: #f5efe0; --paper: #fbf6ea; --paper-warm: #f3eada;
+    --ink: #2a1f15; --ink-soft: #5e503f; --ink-faint: #8a7c6c;
+    --border-soft: #e8dec4; --accent: #8b3a3a;
+    --shadow: 0 1px 2px rgba(60, 35, 20, 0.04), 0 8px 24px rgba(60, 35, 20, 0.04);
+  }
   * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    color: #1a1d24; background: #fafafa; margin: 0;
-    display: flex; flex-direction: column; align-items: center; padding: 4rem 1.5rem;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px; line-height: 1.65; color: var(--ink);
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(180, 140, 90, 0.06), transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(120, 90, 60, 0.05), transparent 50%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 6rem 1.5rem 6rem;
   }
   .wrap { max-width: 640px; width: 100%; }
-  h1 { font-size: 2.25rem; letter-spacing: -0.02em; margin: 0 0 0.5rem; font-weight: 700; }
-  p.lead { color: #4b5563; font-size: 1.1rem; line-height: 1.6; margin: 0 0 2.5rem; }
-  .card {
-    display: block; background: white; border: 1px solid #e4e4e7; border-radius: 12px;
-    padding: 1.5rem 1.75rem; margin-bottom: 1rem; text-decoration: none; color: inherit;
-    transition: all 0.15s; box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  .eyebrow {
+    font-family: 'Public Sans', sans-serif;
+    text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.18em;
+    color: var(--accent); margin: 0 0 1rem; font-weight: 600;
   }
-  .card:hover { border-color: #2563eb; transform: translateY(-1px); box-shadow: 0 4px 8px rgba(37,99,235,0.08); }
-  .card h2 { margin: 0 0 0.35rem; font-size: 1.25rem; font-weight: 600; }
-  .card p { margin: 0; color: #4b5563; font-size: 0.95rem; }
-  .meta { margin-top: 0.5rem; font-size: 0.85rem; color: #6b7280; }
-  footer { margin-top: 3rem; color: #9ca3af; font-size: 0.85rem; text-align: center; }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 120, 'SOFT' 30;
+    font-size: 3.5rem; line-height: 1.05; font-weight: 600;
+    letter-spacing: -0.015em; margin: 0 0 0.85rem;
+  }
+  p.lead {
+    color: var(--ink-soft); font-size: 1.1rem; font-style: italic;
+    line-height: 1.6; margin: 0 0 3rem;
+  }
+  .card {
+    display: block; background: var(--paper);
+    border: 1px solid var(--border-soft); border-radius: 8px;
+    padding: 1.75rem 2rem; margin-bottom: 1.25rem; text-decoration: none;
+    color: inherit; transition: all 0.2s ease; box-shadow: var(--shadow);
+    position: relative;
+  }
+  .card:hover {
+    border-color: var(--accent); transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 58, 58, 0.08), 0 12px 32px rgba(60, 35, 20, 0.06);
+  }
+  .card h2 {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 60;
+    margin: 0 0 0.4rem; font-size: 1.55rem; font-weight: 600;
+    color: var(--ink); letter-spacing: -0.01em;
+  }
+  .card .arrow {
+    color: var(--accent); font-weight: 700; margin-left: 0.35rem;
+    display: inline-block; transition: transform 0.2s ease;
+  }
+  .card:hover .arrow { transform: translateX(4px); }
+  .card p { margin: 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.55; }
+  .card .meta {
+    font-family: 'Public Sans', sans-serif; margin-top: 0.6rem;
+    font-size: 0.78rem; color: var(--ink-faint); text-transform: uppercase;
+    letter-spacing: 0.09em; font-weight: 500;
+  }
+  footer {
+    margin-top: 3rem; color: var(--ink-faint); font-size: 0.88rem;
+    text-align: center; font-style: italic;
+  }
+  footer .ornament {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 144;
+    font-size: 1.5rem; color: var(--accent);
+    margin-bottom: 0.4rem; line-height: 1; font-style: normal;
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <p class="eyebrow">ECONM-II · Principles of Microeconomics</p>
   <h1>Practice Exams</h1>
-  <p class="lead">Principles of Microeconomics. Take these as dry runs for the real midterm (Unit 7) and final (Unit 14). For each item you can select an answer or draft a response, then reveal the model answer and the resources that teach that material.</p>
+  <p class="lead">Dry-run versions of the real midterm and final. Same shape, different items. Take them at your own pace.</p>
   <a class="card" href="midterm.html">
-    <h2>Practice Midterm →</h2>
+    <h2>Practice Midterm <span class="arrow">→</span></h2>
     <p>Cumulative over Units 2 through 6. 16 items: 10 multiple-choice, 4 short-answer, 2 long-answer.</p>
-    <div class="meta">About 90 minutes if you work it under exam conditions.</div>
+    <div class="meta">≈ 90 minutes under exam conditions</div>
   </a>
   <a class="card" href="final.html">
-    <h2>Practice Final →</h2>
-    <p>Cumulative over Units 1 through 13. 24 items: 13 multiple-choice, 7 short-answer, 4 long-answer (one is a synthesis question).</p>
-    <div class="meta">About 2 hours if you work it under exam conditions.</div>
+    <h2>Practice Final <span class="arrow">→</span></h2>
+    <p>Cumulative over Units 1 through 13. 24 items: 13 multiple-choice, 7 short-answer, 4 long-answer (one is a synthesis prompt).</p>
+    <div class="meta">≈ 2 hours under exam conditions</div>
   </a>
-  <footer>Nothing here is graded or recorded.</footer>
+  <footer>
+    <p class="ornament">§</p>
+    <p>Nothing on these pages is graded or recorded.</p>
+  </footer>
 </div>
 </body>
 </html>
